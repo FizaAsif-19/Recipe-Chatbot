@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Genius</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍳</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-utensils"></i> Recipe Genius</h1>
+            <p>Enter ingredients you have, and I'll suggest delicious recipes!</p>
+        </header>
+
+        <main>
+            <section class="input-section">
+                <div class="input-group">
+                    <label for="ingredients"><i class="fas fa-carrot"></i> Your Ingredients:</label>
+                    <textarea id="ingredients" placeholder="e.g., chicken, bread, potatoes, garlic, olive oil..." maxlength="500"></textarea>
+                    <div id="charCount" class="char-count">0/500</div>
+                </div>
+                <div class="controls">
+                    <button id="generateBtn">
+                        <i class="fas fa-magic"></i> Generate Recipes
+                    </button>
+                    <button id="clearBtn">
+                        <i class="fas fa-trash"></i> Clear
+                    </button>
+                </div>
+                
+                <div id="status">
+                    <div id="loading" class="hidden">
+                        <i class="fas fa-spinner spinner"></i> <span>Crafting your recipes...</span>
+                    </div>
+                    <div id="error" class="hidden">
+                        <span id="errorMsg"></span>
+                        <button onclick="closeError()"><i class="fas fa-times"></i></button>
+                    </div>
+                    <div id="warning" class="hidden">
+                        <span id="warningMsg"></span>
+                        <button onclick="closeWarning()"><i class="fas fa-times"></i></button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="recipes" class="recipes-section hidden">
+                <h2><i class="fas fa-list-ul"></i> Suggested Recipes</h2>
+                <div id="recipesList" class="recipe-cards"></div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Presented by • Fiza Asif & Zoha Waris</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
